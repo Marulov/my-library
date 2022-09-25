@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -32,5 +33,14 @@ public class BookService {
                 .category(category)
                 .build();
         return bookResponseConverter.convert(bookRepository.save(book));
+    }
+
+    public List<BookResponse> getAll() {
+        return bookResponseConverter.convert(bookRepository.findAll());
+    }
+
+    public List<BookResponse> getAllByCategoryId(Long categoryId) {
+        return bookResponseConverter.convert(bookRepository.findAllByCategoryId(categoryId).orElseThrow(
+                () -> new RuntimeException("Category not found")));
     }
 }

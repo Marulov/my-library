@@ -1,23 +1,23 @@
 package com.marulov.mylibrary.dto;
 
 public enum CategoryType {
-    RESEARCH_HISTORY("Araştırma - Tarih"),
+    RESEARCH_HISTORY("Arastirma - Tarih"),
     SCIENCE("Bilim"),
-    COMIC("Çizgi Roman"),
-    CHILD_AND_YOUTH("Çocuk ve Gençlik"),
-    LESSON_TEST_BOOKS("Ders / Sınav Kitapları"),
+    COMIC("Cizgi Roman"),
+    CHILD_AND_YOUTH("Cocuk ve Genclik"),
+    LESSON_TEST_BOOKS("Ders / Sinav Kitaplari"),
     RELIGION("Din"),
     LITERATURE("Edebiyat"),
-    EDUCATION_REFERENCE("Eğitim - Referans"),
+    EDUCATION_REFERENCE("Egitim - Referans"),
     PHILOSOPHY("Felsefe"),
-    FOREIGN_LANGUAGE("Yabancı Dil"),
+    FOREIGN_LANGUAGE("Yabanci Dil"),
     HOBBY("Hobi"),
     MYTHOLOGY("Mitoloji"),
     RUMOR("Mizah"),
-    PRESTIGE_BOOKS("PRESTİJ Kitapları"),
-    ART_DESIGN("Sanat - Tasarım"),
+    PRESTIGE_BOOKS("Prestij Kitaplari"),
+    ART_DESIGN("Sanat - Tasarim"),
     AUDIO_BOOKS("Sesli Kitaplar"),
-    OTHER("Diğer");
+    OTHER("Diger");
 
     private final String value;
 

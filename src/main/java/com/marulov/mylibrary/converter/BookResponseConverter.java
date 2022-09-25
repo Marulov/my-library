@@ -4,6 +4,9 @@ import com.marulov.mylibrary.dto.BookResponse;
 import com.marulov.mylibrary.model.Book;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class BookResponseConverter {
 
@@ -18,5 +21,11 @@ public class BookResponseConverter {
                 .bookStatus(book.getBookStatus())
                 .categoryId(book.getCategory().getId())
                 .build();
+    }
+
+    public List<BookResponse> convert(List<Book> books) {
+        return books.stream()
+                .map(this::convert)
+                .collect(Collectors.toList());
     }
 }
