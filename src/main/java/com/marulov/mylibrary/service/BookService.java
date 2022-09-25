@@ -2,8 +2,10 @@ package com.marulov.mylibrary.service;
 
 import com.marulov.mylibrary.converter.BookResponseConverter;
 import com.marulov.mylibrary.dto.BookResponse;
+import com.marulov.mylibrary.dto.CategoryType;
 import com.marulov.mylibrary.dto.SaveBookRequest;
 import com.marulov.mylibrary.model.Book;
+import com.marulov.mylibrary.model.BookStatus;
 import com.marulov.mylibrary.model.Category;
 import com.marulov.mylibrary.repository.BookRepository;
 import lombok.RequiredArgsConstructor;
@@ -41,6 +43,16 @@ public class BookService {
 
     public List<BookResponse> getAllByCategoryId(Long categoryId) {
         return bookResponseConverter.convert(bookRepository.findAllByCategoryId(categoryId).orElseThrow(
+                () -> new RuntimeException("Category not found")));
+    }
+
+    public List<BookResponse> getAllByBookStatus(BookStatus bookStatus) {
+        return bookResponseConverter.convert(bookRepository.findAllByBookStatus(bookStatus).orElseThrow(
+                () -> new RuntimeException("Book status not found")));
+    }
+
+    public List<BookResponse> getAllByCategoryName(CategoryType categoryType) {
+        return bookResponseConverter.convert(bookRepository.findAllByCategoryName(categoryType.getValue()).orElseThrow(
                 () -> new RuntimeException("Category not found")));
     }
 }

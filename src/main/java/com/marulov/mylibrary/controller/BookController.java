@@ -1,7 +1,9 @@
 package com.marulov.mylibrary.controller;
 
 import com.marulov.mylibrary.dto.BookResponse;
+import com.marulov.mylibrary.dto.CategoryType;
 import com.marulov.mylibrary.dto.SaveBookRequest;
+import com.marulov.mylibrary.model.BookStatus;
 import com.marulov.mylibrary.service.BookService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -28,8 +30,18 @@ public class BookController {
         return ResponseEntity.ok(bookService.getAll());
     }
 
-    @GetMapping("/category/{categoryId}")
+    @GetMapping("/by-category-id/{categoryId}")
     public ResponseEntity<List<BookResponse>> getAllByCategoryId(@PathVariable Long categoryId) {
         return ResponseEntity.ok(bookService.getAllByCategoryId(categoryId));
+    }
+
+    @GetMapping("/by-book-status/{bookStatus}")
+    public ResponseEntity<List<BookResponse>> getAllByBookStatus(@PathVariable BookStatus bookStatus) {
+        return ResponseEntity.ok(bookService.getAllByBookStatus(bookStatus));
+    }
+
+    @GetMapping("/by-category-name/{categoryType}")
+    public ResponseEntity<List<BookResponse>> getAllByCategoryName(@PathVariable CategoryType categoryType) {
+        return ResponseEntity.ok(bookService.getAllByCategoryName(categoryType));
     }
 }
