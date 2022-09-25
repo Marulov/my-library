@@ -19,6 +19,7 @@ public class Book extends BaseEntity {
     private String authorName;
     private String publisher;
     private Integer lastPageNumber;
+    private Integer totalPage;
 
     @Enumerated(EnumType.STRING)
     private BookStatus bookStatus;
