@@ -1,7 +1,6 @@
 package com.marulov.mylibrary.dto;
 
 import com.marulov.mylibrary.model.BookStatus;
-import lombok.Builder;
 import lombok.Data;
 
 import java.io.File;

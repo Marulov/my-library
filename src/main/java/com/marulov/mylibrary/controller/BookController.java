@@ -1,6 +1,5 @@
 package com.marulov.mylibrary.controller;
 
-import com.amazonaws.services.waf.model.HTTPRequest;
 import com.marulov.mylibrary.dto.BookResponse;
 import com.marulov.mylibrary.dto.SaveBookRequest;
 import com.marulov.mylibrary.service.BookService;

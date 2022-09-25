@@ -17,7 +17,6 @@ public class BookService {
 
     private final BookRepository bookRepository;
     private final CategoryService categoryService;
-
     private final BookResponseConverter bookResponseConverter;
 
     @Transactional

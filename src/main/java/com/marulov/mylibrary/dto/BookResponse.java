@@ -4,7 +4,6 @@ import com.marulov.mylibrary.model.BookStatus;
 import lombok.Builder;
 import lombok.Data;
 
-import java.io.File;
 
 @Builder
 @Data
@@ -16,6 +15,6 @@ public class BookResponse {
     private Integer lastPageNumber;
     private Integer totalPage;
     private BookStatus bookStatus;
-    private File image;
+    private Long imageId;
     private Long categoryId;
 }
