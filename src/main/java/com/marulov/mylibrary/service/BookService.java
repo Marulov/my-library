@@ -43,7 +43,7 @@ public class BookService {
 
     public List<BookResponse> getAllByCategoryId(Long categoryId) {
         return bookResponseConverter.convert(bookRepository.findAllByCategoryId(categoryId).orElseThrow(
-                () -> new RuntimeException("Category not found")));
+                () -> new RuntimeException("Category id not found")));
     }
 
     public List<BookResponse> getAllByBookStatus(BookStatus bookStatus) {
@@ -53,6 +53,6 @@ public class BookService {
 
     public List<BookResponse> getAllByCategoryName(CategoryType categoryType) {
         return bookResponseConverter.convert(bookRepository.findAllByCategoryName(categoryType.getValue()).orElseThrow(
-                () -> new RuntimeException("Category not found")));
+                () -> new RuntimeException("Category name not found")));
     }
 }

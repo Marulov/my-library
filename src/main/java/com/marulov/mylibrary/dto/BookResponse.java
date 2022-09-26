@@ -15,6 +15,5 @@ public class BookResponse {
     private Integer lastPageNumber;
     private Integer totalPage;
     private BookStatus bookStatus;
-    private Long imageId;
     private Long categoryId;
 }
